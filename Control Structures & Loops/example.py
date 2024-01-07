@@ -1,4 +1,4 @@
-# PLEASE ENSURE YOU OPEN THIS FILE IN VS CODE.
+﻿# PLEASE ENSURE YOU OPEN THIS FILE IN VS CODE.
 
 # *** NOTE ON COMMENTS ***
 # This is a comment in Python.
@@ -7,77 +7,62 @@
 # Please read all the comments in this example file and all others.
 
 
-# ============= While Loops ==================
-# A loop is a sequence of statements that are continually repeated until a certain condition is met.
 
-# In Python, the general syntax for a while loop is as follows:
-# while condition_is_true:
-#     execute_these_statements
-
+# ============= for Loops ==================
+# Programmers don't want to have to copy and paste the same statement over and over again.
+# Just like a while loop, a for loop allows statements to be repeated a number of times.
 
 # ************ Example 1 ************
 print("Example 1: ")
+for i in range(1, 10):
+        print(i)
 
-i = 9
+# Explanation:
+# This for loop prints the numbers 1 to 9. Again, note the indentation and the colon, just like in the if statement.
+# In this for loop, when the variable i (which is an integer) is in the range of 1 to 10 (i.e. either 1, 2, 3 ,4 ,5 ,6 ... or 9), the code under the for loop will execute.
+# range(1, 10) specifies that i = 1 in the first iteration of the loop.
+# Through each iteration of the loop i will be increased by 1 until i is 10 and therefore not in the range (1,10).
+# The loop will then stop executing.
 
-while i < 10:
-   print(i)
-   i = i + 1
-# The above loop will only execute once because the condition while i < 10 is not true after you have added 1 to i.
 
 
 # ************ Example 2 ************
+# You can use an if statement within a for loop!
 print("Example 2: ")
+for i in range (1, 10):
+        if i > 5:
+                print(i)
 
-i = 0
+# This will only print the numbers 6, 7, 8 and 9 because no action is taken for numbers less than or equal to 5.
 
-while i < 100:
-     print(i)
-     i = i + 1
-# The above loop will print out all the numbers from 0 to 99, and then terminate.
+# ================ Nested Loops ==================
 
 # ************ Example 3 ************
+# This example prints out the first 5 multiples of numbers 1 to 5
+
 print("Example 3: ")
 
-i = 100
+for x in range(1, 6):
+    for y in range(1, 6):
+        print('{} * {} = {}'.format(x, y, x * y))
+    print("")
 
-while i < 50:
-     print(i)
+# Run this program to see the output
 
-# The above while loop will not execute at all, because i is already bigger than 50.
-
+# ============= Nested if Statements ==================
+# You can also nest if statements either within another if statement or within a loop
 
 # ************ Example 4 ************
+# Nested if statements
 print("Example 4: ")
+name = "B"
+if name == "A":
+        if name == "B":
+                print("It isn't possible for this code to execute - how can the variable name be two things at once?")
+else:
+        print("Your name isn't A but I can't automatically assume from that that it is B.")
 
-a=0
-
-while a < 10:
-     print(a)
-     a += 1       # a += 1 is equivalent to a = a + 1
-
-
-# Initially a is set to 0.
-# The while loop then checks the condition (a < 10) to see if it is true.
-# If it is true the indented statements following the while loop are executed
-# So if a is less than 10, the value of a is printed and then increased by one.
-# The loop then begins again by checking the the condition and determining whether to execute the indented statements.
-# This goes on until the condition becomes False.
-
-
-# ************ Example 5 ************
-# The following example shows a program whose while statement sums successive even integers (2 + 4 + 6 + 8 + ...), until the total is greater than 250.
-# An update statement increments i by 2 so that it becomes the next even integer.
-
-print("Example 5: ")
-
-sum1 = 0
-i=0                  #initial even integer for the sum
-while sum1 <= 250:
-     sum1 += i
-     i += 2
-     print(sum1)
-
-
+# Think about this one logically! Note the indentation carefully. You have an if within an if and then an else.
 
 # ****************** END OF EXAMPLE CODE ********************* #
+
